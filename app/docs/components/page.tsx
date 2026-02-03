@@ -38,6 +38,16 @@ const components = [
         description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
         href: "/docs/components/progress",
     },
+    {
+        title: "Progress",
+        description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        href: "/docs/components/progress",
+    },
+    {
+        title: "Checkbox",
+        description: "A control that allows the user to toggle between checked and not checked.",
+        href: "/docs/components/checkbox",
+    },
 ]
 
 export default function ComponentsPage() {

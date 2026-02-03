@@ -77,6 +77,12 @@ export function Sidebar() {
                             >
                                 Progress
                             </Link>
+                            <Link
+                                href="/docs/components/checkbox"
+                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
+                            >
+                                Checkbox
+                            </Link>
                         </div>
                     </div>
                 </div>
