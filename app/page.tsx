@@ -8,7 +8,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full border-b-2 border-black bg-white py-20 px-8 text-center md:py-32 dark:bg-black dark:border-white">
         <div className="mx-auto max-w-3xl space-y-8">
-          <h1 className="text-5xl font-black uppercase tracking-tighter sm:text-7xl drop-shadow-[6px_6px_0_rgba(0,0,0,1)] dark:text-white dark:drop-shadow-[6px_6px_0_#facc15]">
+          <h1 className="text-5xl font-black text-[#facc15] uppercase tracking-tighter sm:text-7xl drop-shadow-[6px_6px_0_rgba(0,0,0,1)] dark:text-white dark:drop-shadow-[6px_6px_0_#facc15] [-webkit-text-stroke:2px_black]">
             Rect UI
           </h1>
           <p className="mx-auto max-w-xl text-xl font-bold leading-normal text-slate-800 dark:text-slate-200">

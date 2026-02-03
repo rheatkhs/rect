@@ -14,7 +14,7 @@ const TabsList = React.forwardRef<
     <TabsPrimitive.List
         ref={ref}
         className={cn(
-            "inline-flex h-10 items-center justify-center border-2 border-black bg-slate-100 dark:border-white dark:bg-zinc-900",
+            "inline-flex h-10 items-center justify-center border-2 border-black bg-slate-100 dark:border-black dark:bg-zinc-900",
             className
         )}
         {...props}
@@ -34,7 +34,7 @@ const TabsTrigger = React.forwardRef<
             "data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
             "dark:data-[state=active]:bg-zinc-50 dark:data-[state=active]:text-black dark:data-[state=active]:border-black dark:data-[state=active]:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]",
             // Simplified active state for reliable dark mode visibility
-            "dark:data-[state=active]:bg-white dark:data-[state=active]:border-white dark:text-slate-400 dark:data-[state=active]:text-black",
+            "dark:data-[state=active]:bg-white dark:data-[state=active]:border-black dark:text-slate-400 dark:data-[state=active]:text-black",
             className
         )}
         {...props}

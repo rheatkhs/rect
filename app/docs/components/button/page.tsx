@@ -3,6 +3,7 @@ import Card from "@/components/ui/card"
 import { CodeBlock } from "@/components/ui/code-block"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronRight } from "lucide-react"
+import { OnThisPage } from "@/components/on-this-page"
 
 export default function ButtonDocsPage() {
     return (
@@ -32,20 +33,20 @@ export default function ButtonDocsPage() {
                             <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
                                 <TabsTrigger
                                     value="preview"
-                                    className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white"
+                                    className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black"
                                 >
                                     Preview
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="code"
-                                    className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white"
+                                    className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black"
                                 >
                                     Code
                                 </TabsTrigger>
                             </TabsList>
                         </div>
                         <TabsContent value="preview" className="mt-4">
-                            <div className="relative rounded-md border-2 border-black bg-slate-50 p-10 flex check-board items-center justify-center min-h-[350px] shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-white dark:shadow-[4px_4px_0_0_#fff]">
+                            <div className="relative rounded-md border-2 border-black bg-slate-50 p-10 flex check-board items-center justify-center min-h-[350px] shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
                                 <Button>Default Button</Button>
                             </div>
                         </TabsContent>
@@ -141,11 +142,11 @@ export default function Example() {
                             <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">Variants</h3>
                             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                                 <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
-                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Preview</TabsTrigger>
-                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Code</TabsTrigger>
+                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
+                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
                                 </TabsList>
                                 <TabsContent value="preview" className="mt-4">
-                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-white dark:shadow-[4px_4px_0_0_#fff]">
+                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
                                         <Button variant="primary">Primary</Button>
                                         <Button variant="secondary">Secondary</Button>
                                         <Button variant="accent">Accent</Button>
@@ -168,11 +169,11 @@ export default function Example() {
                             <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">Sizes</h3>
                             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                                 <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
-                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Preview</TabsTrigger>
-                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Code</TabsTrigger>
+                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
+                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
                                 </TabsList>
                                 <TabsContent value="preview" className="mt-4">
-                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-white dark:shadow-[4px_4px_0_0_#fff]">
+                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
                                         <Button size="sm">Small</Button>
                                         <Button size="default">Default</Button>
                                         <Button size="lg">Large</Button>
@@ -192,11 +193,11 @@ export default function Example() {
                             <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">State</h3>
                             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                                 <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
-                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Preview</TabsTrigger>
-                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-white dark:data-[state=active]:text-white">Code</TabsTrigger>
+                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
+                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
                                 </TabsList>
                                 <TabsContent value="preview" className="mt-4">
-                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-white dark:shadow-[4px_4px_0_0_#fff]">
+                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
                                         <Button disabled>Disabled</Button>
                                     </div>
                                 </TabsContent>
@@ -213,28 +214,13 @@ export default function Example() {
                 </div>
             </div>
 
-            <div className="hidden xl:block">
-                <div className="sticky top-20 space-y-4">
-                    <h4 className="font-black uppercase tracking-tight text-sm">On This Page</h4>
-                    <ul className="space-y-3 text-sm">
-                        <li>
-                            <a href="#installation" className="block text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white hover:underline decoration-2 underline-offset-4">
-                                Installation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#usage" className="block text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white hover:underline decoration-2 underline-offset-4">
-                                Usage
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#examples" className="block text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white hover:underline decoration-2 underline-offset-4">
-                                Examples
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <OnThisPage
+                items={[
+                    { title: "Installation", url: "#installation" },
+                    { title: "Usage", url: "#usage" },
+                    { title: "Examples", url: "#examples" },
+                ]}
+            />
         </div>
     )
 }

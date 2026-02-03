@@ -13,7 +13,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant 
             className={cn(
                 "inline-flex items-center justify-center border-2 border-black font-bold uppercase transition-all",
                 "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
-                "dark:border-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]",
+                "dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]",
                 // Hover and Active states
                 "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
                 "active:translate-x-[2px] active:translate-y-[2px] active:shadow-none",

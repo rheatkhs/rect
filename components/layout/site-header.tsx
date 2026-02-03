@@ -12,9 +12,8 @@ export function SiteHeader() {
                 <div className="mr-4 flex items-center">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                         <span className="text-xl font-black uppercase tracking-tighter border-2 border-black p-1 bg-yellow-400 dark:border-white dark:bg-zinc-800 dark:text-white transform -skew-x-6">
-                            RCT
+                            RECT UI
                         </span>
-                        <span className="font-bold hidden sm:inline-block">Rect UI</span>
                     </Link>
                     <nav className="hidden md:flex items-center space-x-6 text-sm font-bold uppercase">
                         <Link href="/docs" className="hover:underline underline-offset-4 decoration-2">
@@ -38,7 +37,7 @@ export function SiteHeader() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <Button variant="secondary" size="icon" className="h-9 w-9 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none active:shadow-none">
+                            <Button variant="secondary" size="icon" className="h-9 w-9 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none active:shadow-none">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -57,7 +56,7 @@ export function SiteHeader() {
                                 <span className="sr-only">GitHub</span>
                             </Button>
                         </Link>
-                        <ModeToggle className="h-9 w-9 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none active:shadow-none" />
+                        <ModeToggle className="h-9 w-9 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none active:shadow-none" />
                         <MobileNav />
                     </nav>
                 </div>
