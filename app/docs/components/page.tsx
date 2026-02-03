@@ -23,6 +23,11 @@ const components = [
         description: "Wrapper for input with label and helper text.",
         href: "/docs/components/field",
     },
+    {
+        title: "Select",
+        description: "Dropdown menu to select options.",
+        href: "/docs/components/select",
+    },
 ]
 
 export default function ComponentsPage() {
