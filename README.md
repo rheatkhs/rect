@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RECT
 
-## Getting Started
+> **A Neobrutalist Component System for Next.js.**
 
-First, run the development server:
+**RECT** is a modern, accessible, and inclusive design system built with **Radix UI** and **Tailwind CSS**. It features a bold, high-contrast aesthetic characterized by hard shadows, thick borders, and vibrant colors—designed to make your applications pop.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Project Status](https://img.shields.io/badge/STATUS-ACTIVE-black?style=for-the-badge)
+![License](https://img.shields.io/badge/LICENSE-MIT-black?style=for-the-badge)
+
+## 🚀 FEATURES
+
+-   **Neobrutalist Design**: Unapologetically bold. Hard edges, solid shadows, and high saturation.
+-   **Accessible**: Built on top of Radix UI primitives for full WAI-ARIA compliance.
+-   **Composable**: Modular components that fit together perfectly.
+-   **Dark Mode**: First-class support for dark mode with high-contrast adjustments.
+-   **Typed**: Written in TypeScript for a robust development experience.
+
+## 📦 COMPONENTS
+
+We have implemented a core set of components to get you started:
+
+| Component | Description |
+| :--- | :--- |
+| **Button** | Interactive elements with punchy hover states. |
+| **Card** | Composite containers with header, content, and footer sections. |
+| **Input** | Form fields with distinct focus states. |
+| **Field** | **[NEW]** Composable wrapper for labels, inputs, descriptions, and errors. |
+| **Select** | **[NEW]** Dropdowns with support for groups and scrolling. |
+| **Table** | **[NEW]** Responsive data tables with bold headers. |
+| **Progress**| **[NEW]** Linear progress indicators. |
+| **Slider** | **[NEW]** Draggable input controls. |
+
+## 🛠️ INSTALLATION
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/rheatkhs/rect.git
+    cd rect
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+## 💻 USAGE
+
+Import components directly from the `@/components/ui` directory.
+
+```tsx
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
+export default function Page() {
+  return (
+    <Card className="max-w-md bg-yellow-200">
+      <CardHeader>
+        <CardTitle>HELLO WORLD</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="mb-4 font-medium">
+            This is a neobrutalist card component. It demands attention.
+        </p>
+        <Button>Click Me</Button>
+      </CardContent>
+    </Card>
+  )
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 THEME
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The design system relies on a few key Tailwind utilities:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **Borders**: `border-2 border-black` (or `dark:border-white`)
+-   **Shadows**: `shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`
+-   **Typography**: Uppercase headers, bold weights, and monospaced accents.
 
-## Learn More
+## 🤝 CONTRIBUTING
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built with Next.js 16 and Tailwind CSS.*
