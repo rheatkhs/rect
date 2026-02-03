@@ -33,6 +33,11 @@ const components = [
         description: "Responsive table with headers and footers.",
         href: "/docs/components/table",
     },
+    {
+        title: "Progress",
+        description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        href: "/docs/components/progress",
+    },
 ]
 
 export default function ComponentsPage() {
