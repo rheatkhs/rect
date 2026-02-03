@@ -8,12 +8,12 @@ export default function DocsPage() {
                 <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl uppercase">
                     Introduction
                 </h1>
-                <p className="text-lg text-slate-700">
+                <p className="text-lg text-slate-700 dark:text-slate-300">
                     Rect UI is a reusable component library built with Radix UI and Tailwind CSS, styled with Neobrutalism.
                 </p>
             </div>
-            <div className="p-6 border-2 border-black bg-pink-100 shadow-[4px_4px_0_0_#000]">
-                <p className="font-bold">
+            <div className="p-6 border-2 border-black bg-pink-100 shadow-[4px_4px_0_0_#000] dark:bg-pink-900 dark:border-white dark:shadow-[4px_4px_0_0_#fff]">
+                <p className="font-bold dark:text-white">
                     This is NOT a component library. It's a collection of re-usable components that you can copy and paste into your apps.
                 </p>
             </div>

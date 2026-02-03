@@ -27,7 +27,7 @@ export default function ComponentsPage() {
                 <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl uppercase">
                     Components
                 </h1>
-                <p className="text-xl text-slate-700">
+                <p className="text-xl text-slate-700 dark:text-slate-300">
                     The building blocks of Rect UI.
                 </p>
             </div>
@@ -35,7 +35,7 @@ export default function ComponentsPage() {
                 {components.map((component) => (
                     <Link key={component.href} href={component.href} className="group">
                         <Card title={component.title} className="h-full transition-transform group-hover:-translate-y-1">
-                            <p className="text-slate-600 mb-4">{component.description}</p>
+                            <p className="text-slate-600 mb-4 dark:text-slate-400">{component.description}</p>
                             <Button variant="secondary" className="w-full">View Docs</Button>
                         </Card>
                     </Link>

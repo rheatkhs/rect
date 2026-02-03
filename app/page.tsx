@@ -12,7 +12,7 @@ export default function Home() {
             Rect UI
           </h1>
           <p className="mx-auto max-w-xl text-xl font-bold leading-normal text-slate-800 dark:text-slate-200">
-            A Neobrutalist UI library for developers who want their apps to look raw, bold, and loud.
+            Copy-paste ready components to build beautiful, responsive websites faster. No installation required.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link href="/docs">
