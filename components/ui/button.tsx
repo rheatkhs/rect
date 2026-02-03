@@ -3,16 +3,18 @@ import { ButtonHTMLAttributes, forwardRef } from "react"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'accent' | 'danger'
+    size?: 'default' | 'sm' | 'lg' | 'icon'
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant = 'primary', ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant = 'primary', size = 'default', ...props }, ref) => {
     return (
         <button
             ref={ref}
             className={cn(
-                "inline-flex items-center justify-center border-2 border-black px-6 py-2 font-bold uppercase transition-all",
+                "inline-flex items-center justify-center border-2 border-black font-bold uppercase transition-all",
                 "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
-                // Hover and Active states for "press" effect
+                "dark:border-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]",
+                // Hover and Active states
                 "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
                 "active:translate-x-[2px] active:translate-y-[2px] active:shadow-none",
                 // Accessibility
@@ -23,6 +25,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant 
                 variant === 'secondary' && "bg-white text-black hover:bg-gray-50",
                 variant === 'accent' && "bg-cyan-400 text-black hover:bg-cyan-500",
                 variant === 'danger' && "bg-red-500 text-white hover:bg-red-600",
+
+                // Sizes
+                size === 'default' && "h-10 px-6 py-2",
+                size === 'sm' && "h-9 px-3",
+                size === 'lg' && "h-12 px-8 text-lg",
+                size === 'icon' && "h-10 w-10 p-0",
 
                 className
             )}
