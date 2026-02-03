@@ -48,6 +48,11 @@ const components = [
         description: "A control that allows the user to toggle between checked and not checked.",
         href: "/docs/components/checkbox",
     },
+    {
+        title: "Skeleton",
+        description: "Use to show a placeholder while content is loading.",
+        href: "/docs/components/skeleton",
+    },
 ]
 
 export default function ComponentsPage() {
