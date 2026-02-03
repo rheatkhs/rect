@@ -89,6 +89,18 @@ export function Sidebar() {
                             >
                                 Skeleton
                             </Link>
+                            <Link
+                                href="/docs/components/spinner"
+                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
+                            >
+                                Spinner
+                            </Link>
+                            <Link
+                                href="/docs/components/badge"
+                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
+                            >
+                                Badge
+                            </Link>
                         </div>
                     </div>
                 </div>

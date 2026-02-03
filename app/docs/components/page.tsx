@@ -53,6 +53,16 @@ const components = [
         description: "Use to show a placeholder while content is loading.",
         href: "/docs/components/skeleton",
     },
+    {
+        title: "Spinner",
+        description: "Indicates that a process is active or the system is loading.",
+        href: "/docs/components/spinner",
+    },
+    {
+        title: "Badge",
+        description: "Displays a badge or a component that looks like a badge.",
+        href: "/docs/components/badge",
+    },
 ]
 
 export default function ComponentsPage() {
