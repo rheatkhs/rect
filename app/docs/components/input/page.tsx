@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui/button"
 
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
 import { CodeBlock } from "@/components/ui/code-block"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronRight } from "lucide-react"
 import { OnThisPage } from "@/components/on-this-page"
 
-export default function ButtonDocsPage() {
+export default function InputDocsPage() {
     return (
         <div className="xl:grid xl:grid-cols-[1fr_300px] gap-10 pb-10">
             <div className="space-y-12 min-w-0">
@@ -16,13 +18,13 @@ export default function ButtonDocsPage() {
                         <ChevronRight className="h-4 w-4" />
                         <span className="font-bold uppercase tracking-wider">Components</span>
                         <ChevronRight className="h-4 w-4" />
-                        <span className="font-bold uppercase tracking-wider text-black dark:text-white">Button</span>
+                        <span className="font-bold uppercase tracking-wider text-black dark:text-white">Input</span>
                     </div>
                     <h1 className="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl uppercase">
-                        Button
+                        Input
                     </h1>
                     <p className="text-xl text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
-                        Displays a button or a component that looks like a button. Built for the modern web with a brutalist aesthetic.
+                        Displays a form input field or a component that looks like an input field.
                     </p>
                 </div>
 
@@ -47,16 +49,18 @@ export default function ButtonDocsPage() {
                         </div>
                         <TabsContent value="preview" className="mt-4">
                             <div className="relative rounded-md border-2 border-black bg-slate-50 p-10 flex check-board items-center justify-center min-h-[350px] shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
-                                <Button>Default Button</Button>
+                                <div className="w-full max-w-sm space-y-2">
+                                    <Input type="email" placeholder="Email" />
+                                </div>
                             </div>
                         </TabsContent>
                         <TabsContent value="code">
                             <CodeBlock
-                                fileName="examples/button-demo.tsx"
-                                code={`import { Button } from "@/components/ui/button"
+                                fileName="examples/input-demo.tsx"
+                                code={`import { Input } from "@/components/ui/input"
 
-export function ButtonDemo() {
-  return <Button>Button</Button>
+export function InputDemo() {
+  return <Input type="email" placeholder="Email" />
 }`}
                             />
                         </TabsContent>
@@ -72,46 +76,33 @@ export function ButtonDemo() {
                             </p>
                         </div>
                         <CodeBlock
-                            fileName="components/ui/button.tsx"
+                            fileName="components/ui/input.tsx"
                             code={`import { cn } from "@/lib/utils"
-import { ButtonHTMLAttributes, forwardRef } from "react"
+import { forwardRef, InputHTMLAttributes } from "react"
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'accent' | 'danger'
-  size?: 'default' | 'sm' | 'lg' | 'icon'
-}
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> { }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant = 'primary', size = 'default', ...props }, ref) => {
-  return (
-    <button
-      ref={ref}
-      className={cn(
-        "inline-flex items-center justify-center border-2 border-black font-bold uppercase transition-all",
-        "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
-        "dark:border-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]",
-        "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
-        "active:translate-x-[2px] active:translate-y-[2px] active:shadow-none",
-        "disabled:opacity-50 disabled:pointer-events-none",
-        
-        variant === 'primary' && "bg-yellow-400 text-black hover:bg-yellow-500",
-        variant === 'secondary' && "bg-white text-black hover:bg-gray-50",
-        variant === 'accent' && "bg-cyan-400 text-black hover:bg-cyan-500",
-        variant === 'danger' && "bg-red-500 text-white hover:bg-red-600",
-        
-        size === 'default' && "h-10 px-6 py-2",
-        size === 'sm' && "h-9 px-3",
-        size === 'lg' && "h-12 px-8 text-lg",
-        size === 'icon' && "h-10 w-10 p-0",
-
-        className
-      )}
-      {...props}
-    />
-  )
+const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
+    return (
+        <input
+            type={type}
+            className={cn(
+                "flex h-12 w-full rounded-none border-2 border-black bg-white px-3 py-2 text-base font-bold placeholder:text-gray-500",
+                "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+                "dark:bg-black dark:border-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:text-white dark:placeholder:text-gray-400",
+                "focus:outline-none focus:ring-0 focus:bg-yellow-200 focus:translate-x-[2px] focus:translate-y-[2px] focus:shadow-none transition-all",
+                "dark:focus:bg-purple-900",
+                "disabled:cursor-not-allowed disabled:opacity-50",
+                className
+            )}
+            ref={ref}
+            {...props}
+        />
+    )
 })
-Button.displayName = "Button"
+Input.displayName = "Input"
 
-export { Button }`}
+export { Input }`}
                         />
                     </section>
 
@@ -119,17 +110,15 @@ export { Button }`}
                         <div className="space-y-2">
                             <h2 className="text-3xl font-black uppercase">Usage</h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400">
-                                Import the button component to use it in your pages.
+                                Import the input component to use it in your pages.
                             </p>
                         </div>
                         <CodeBlock
                             fileName="app/example.tsx"
-                            code={`import { Button } from "@/components/ui/button"
+                            code={`import { Input } from "@/components/ui/input"
 
 export default function Example() {
-  return (
-    <Button variant="primary">Click Me</Button>
-  )
+  return <Input />
 }`}
                         />
                     </section>
@@ -137,9 +126,9 @@ export default function Example() {
                     <section id="examples" className="space-y-6 scroll-mt-20">
                         <h2 className="text-3xl font-black uppercase">Examples</h2>
 
-                        {/* Examples: Variants */}
+                        {/* File */}
                         <div className="space-y-4">
-                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">Variants</h3>
+                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">File</h3>
                             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                                 <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
                                     <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
@@ -147,26 +136,34 @@ export default function Example() {
                                 </TabsList>
                                 <TabsContent value="preview" className="mt-4">
                                     <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
-                                        <Button variant="primary">Primary</Button>
-                                        <Button variant="secondary">Secondary</Button>
-                                        <Button variant="accent">Accent</Button>
-                                        <Button variant="danger">Danger</Button>
+                                        <div className="w-full max-w-sm space-y-2">
+                                            <Label htmlFor="picture">Picture</Label>
+                                            <Input id="picture" type="file" />
+                                        </div>
                                     </div>
                                 </TabsContent>
                                 <TabsContent value="code">
                                     <CodeBlock
-                                        fileName="examples/variants.tsx"
-                                        code={`<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="accent">Accent</Button>
-<Button variant="danger">Danger</Button>`}
+                                        fileName="examples/input-file.tsx"
+                                        code={`import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+export function InputFile() {
+  return (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="picture">Picture</Label>
+      <Input id="picture" type="file" />
+    </div>
+  )
+}`}
                                     />
                                 </TabsContent>
                             </Tabs>
                         </div>
 
+                        {/* Disabled */}
                         <div className="space-y-4">
-                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">Sizes</h3>
+                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">Disabled</h3>
                             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                                 <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
                                     <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
@@ -174,42 +171,93 @@ export default function Example() {
                                 </TabsList>
                                 <TabsContent value="preview" className="mt-4">
                                     <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
-                                        <Button size="sm">Small</Button>
-                                        <Button size="default">Default</Button>
-                                        <Button size="lg">Large</Button>
+                                        <div className="w-full max-w-sm">
+                                            <Input disabled type="email" placeholder="Email" />
+                                        </div>
                                     </div>
                                 </TabsContent>
                                 <TabsContent value="code">
                                     <CodeBlock
-                                        fileName="examples/sizes.tsx"
-                                        code={`<Button size="sm">Small</Button>
-<Button size="default">Default</Button>
-<Button size="lg">Large</Button>`}
-                                    />
-                                </TabsContent>
-                            </Tabs>
-                        </div>
-                        <div className="space-y-4">
-                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">State</h3>
-                            <Tabs defaultValue="preview" className="relative mr-auto w-full">
-                                <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
-                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
-                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
-                                </TabsList>
-                                <TabsContent value="preview" className="mt-4">
-                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
-                                        <Button disabled>Disabled</Button>
-                                    </div>
-                                </TabsContent>
-                                <TabsContent value="code">
-                                    <CodeBlock
-                                        fileName="examples/state.tsx"
-                                        code={`<Button disabled>Disabled</Button>`}
+                                        fileName="examples/input-disabled.tsx"
+                                        code={`import { Input } from "@/components/ui/input"
+
+export function InputDisabled() {
+  return <Input disabled type="email" placeholder="Email" />
+}`}
                                     />
                                 </TabsContent>
                             </Tabs>
                         </div>
 
+                        {/* With Label */}
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">With Label</h3>
+                            <Tabs defaultValue="preview" className="relative mr-auto w-full">
+                                <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
+                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
+                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
+                                </TabsList>
+                                <TabsContent value="preview" className="mt-4">
+                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
+                                        <div className="w-full max-w-sm space-y-2">
+                                            <Label htmlFor="email">Email</Label>
+                                            <Input type="email" id="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="code">
+                                    <CodeBlock
+                                        fileName="examples/input-with-label.tsx"
+                                        code={`import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+export function InputWithLabel() {
+  return (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="email">Email</Label>
+      <Input type="email" id="email" placeholder="Email" />
+    </div>
+  )
+}`}
+                                    />
+                                </TabsContent>
+                            </Tabs>
+                        </div>
+
+                        {/* With Button */}
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold uppercase text-slate-700 dark:text-slate-300">With Button</h3>
+                            <Tabs defaultValue="preview" className="relative mr-auto w-full">
+                                <TabsList className="w-full justify-start rounded-none border-0 border-b-2 bg-transparent p-0">
+                                    <TabsTrigger value="preview" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Preview</TabsTrigger>
+                                    <TabsTrigger value="code" className="relative h-10 rounded-none border-b-2 border-transparent bg-transparent px-4 pb-3 pt-2 font-black uppercase text-slate-500 shadow-none transition-none data-[state=active]:border-black data-[state=active]:text-black data-[state=active]:shadow-none dark:text-slate-400 dark:data-[state=active]:border-black dark:data-[state=active]:text-black">Code</TabsTrigger>
+                                </TabsList>
+                                <TabsContent value="preview" className="mt-4">
+                                    <div className="rounded-md border-2 border-black bg-slate-50 p-6 flex flex-wrap gap-4 items-center justify-center shadow-[4px_4px_0_0_#000] dark:bg-zinc-900 dark:border-black dark:shadow-[4px_4px_0_0_#fff]">
+                                        <div className="flex w-full max-w-sm items-center space-x-2">
+                                            <Input type="email" placeholder="Email" />
+                                            <Button type="submit">Subscribe</Button>
+                                        </div>
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="code">
+                                    <CodeBlock
+                                        fileName="examples/input-with-button.tsx"
+                                        code={`import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
+export function InputWithButton() {
+  return (
+    <div className="flex w-full max-w-sm items-center space-x-2">
+      <Input type="email" placeholder="Email" />
+      <Button type="submit">Subscribe</Button>
+    </div>
+  )
+}`}
+                                    />
+                                </TabsContent>
+                            </Tabs>
+                        </div>
                     </section>
                 </div>
             </div>

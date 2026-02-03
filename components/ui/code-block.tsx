@@ -79,13 +79,7 @@ export function CodeBlock({
             </div>
             <div className="overflow-x-auto bg-zinc-950 p-4">
                 <div className="flex">
-                    {isMultiLine && (
-                        <div className="flex flex-col text-right select-none pr-4 border-r border-zinc-800 mr-4 text-zinc-600 font-mono text-sm leading-relaxed">
-                            {lines.map((_, i) => (
-                                <span key={i} className="inline-block h-[1.5em]">{i + 1}</span>
-                            ))}
-                        </div>
-                    )}
+
                     <pre className="font-mono text-sm leading-relaxed flex-1 overflow-x-auto">
                         <code
                             className={`hljs language-${getLanguage(fileName)} bg-transparent p-0 block`}

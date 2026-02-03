@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Card from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const components = [
     {
@@ -18,6 +18,11 @@ const components = [
         description: "Form field for user text input.",
         href: "/docs/components/input",
     },
+    {
+        title: "Field",
+        description: "Wrapper for input with label and helper text.",
+        href: "/docs/components/field",
+    },
 ]
 
 export default function ComponentsPage() {
@@ -34,9 +39,16 @@ export default function ComponentsPage() {
             <div className="grid gap-6 md:grid-cols-2">
                 {components.map((component) => (
                     <Link key={component.href} href={component.href} className="group">
-                        <Card title={component.title} className="h-full transition-transform group-hover:-translate-y-1">
-                            <p className="text-slate-600 mb-4 dark:text-slate-400">{component.description}</p>
-                            <Button variant="secondary" className="w-full">View Docs</Button>
+                        <Card className="h-full transition-transform group-hover:-translate-y-1">
+                            <CardHeader>
+                                <CardTitle>{component.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-slate-600 mb-4 dark:text-slate-400">{component.description}</p>
+                            </CardContent>
+                            <CardFooter>
+                                <Button variant="secondary" className="w-full">View Docs</Button>
+                            </CardFooter>
                         </Card>
                     </Link>
                 ))}

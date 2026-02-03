@@ -59,6 +59,12 @@ export function Sidebar() {
                             >
                                 Input
                             </Link>
+                            <Link
+                                href="/docs/components/field"
+                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
+                            >
+                                Field
+                            </Link>
                         </div>
                     </div>
                 </div>

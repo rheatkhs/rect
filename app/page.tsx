@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Card from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
   return (
@@ -29,22 +29,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="container mx-auto grid gap-8 px-4 py-16 md:grid-cols-3">
-        <Card title="Hard Shadows" className="bg-cyan-200">
-          <p>
-            No blur allowed. We use strictly hard CSS shadows to give depth that punches you in the face.
-          </p>
+        <Card className="bg-cyan-200">
+          <CardHeader>
+            <CardTitle>Hard Shadows</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>
+              No blur allowed. We use strictly hard CSS shadows to give depth that punches you in the face.
+            </p>
+          </CardContent>
         </Card>
-        <Card title="Thick Borders" className="bg-pink-300">
-          <p>
-            2px or 3px solid black borders on everything. Defines structure and separates content with authority.
-          </p>
+        <Card className="bg-pink-300">
+          <CardHeader>
+            <CardTitle>Thick Borders</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>
+              2px or 3px solid black borders on everything. Defines structure and separates content with authority.
+            </p>
+          </CardContent>
         </Card>
-        <Card title="Raw Typography" className="bg-yellow-200">
-          <p>
-            Bold headings and monospaced data text. Readability meets style in a clash of aggression.
-          </p>
+        <Card className="bg-yellow-200">
+          <CardHeader>
+            <CardTitle>Raw Typography</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Bold headings and monospaced data text. Readability meets style in a clash of aggression.
+            </p>
+          </CardContent>
         </Card>
       </section>
     </main>
