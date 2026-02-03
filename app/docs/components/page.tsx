@@ -28,6 +28,11 @@ const components = [
         description: "Dropdown menu to select options.",
         href: "/docs/components/select",
     },
+    {
+        title: "Table",
+        description: "Responsive table with headers and footers.",
+        href: "/docs/components/table",
+    },
 ]
 
 export default function ComponentsPage() {

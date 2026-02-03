@@ -28,12 +28,6 @@ export function Sidebar() {
                             >
                                 Introduction
                             </Link>
-                            <Link
-                                href="/docs/installation"
-                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
-                            >
-                                Installation
-                            </Link>
                         </div>
                     </div>
                     <div className="pb-4">
@@ -70,6 +64,12 @@ export function Sidebar() {
                                 className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
                             >
                                 Select
+                            </Link>
+                            <Link
+                                href="/docs/components/table"
+                                className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline underline-offset-4 decoration-2"
+                            >
+                                Table
                             </Link>
                         </div>
                     </div>
